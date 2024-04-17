@@ -1,0 +1,8 @@
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e3e3e3;
+  height: 10vh;
+}
+
