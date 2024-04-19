@@ -1,8 +1,13 @@
-.title {
+.Simples {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #e3e3e3;
+  justify-content: center;
   height: 10vh;
 }
 
+.Image {
+  justify-content: center;
+  align-items: center;
+}
