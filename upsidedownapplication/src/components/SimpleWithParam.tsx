@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import Image from 'next/image';
+import './SimpleWithParam.css'
 
 interface SimpleWithParamProps {
     src: string;
@@ -7,13 +8,13 @@ interface SimpleWithParamProps {
 
   const SimpleWithParam: React.FC<SimpleWithParamProps> = ({ src }) => {
 
-    return (<div className='cardSerie'>
+    return (<>
       <Image
         src={src}
-        width={480}
+        width={400}
         height={300}
-        alt="Imagem dos personagens" />
-    </div>
+        alt="Imagem dos personagens" className='imagens_all' />
+    </>
     )
   }
 

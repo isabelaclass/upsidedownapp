@@ -11,12 +11,12 @@ export default function Home() {
       <Image
         src="/logo.svg"
         width={500}
-        height={500}
-        alt="Upside down title"
+        height={150}
+        alt="Upside down title" className="logo_principal"
         />
         <Simples/>
         <SimpleWithChildren>
-        <h1>O CLUBE DUNGEONS & DRAGONS</h1>
+        <h1 className="title">O CLUBE DUNGEONS & DRAGONS</h1>
       </SimpleWithChildren>
       <div className='card-container'>
         <SimpleWithParam src="/serie-image-01.png"/>
@@ -24,8 +24,16 @@ export default function Home() {
         <SimpleWithParam src="/serie-image-03.png"/>
       </div>
       <div className='form'>
-      Nome: <input name="name" />
-      E-mail: <input name="name" />
+        <div>
+          <label >Nome: </label>
+        <input name="name" />
+        </div>
+
+        <div>
+          <label>E-mail: </label>
+          <input name="name" />
+        </div>
+      
       <Button/>
       </div>
     </main>
