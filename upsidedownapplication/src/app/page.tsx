@@ -3,7 +3,8 @@ import Simples from "@/components/Simples";
 import SimpleWithChildren from '@/components/SimpleWithChildren';
 import SimpleWithParam from '@/components/SimpleWithParam';
 import Button from '@/components/Button'
-import ButtonToPage from '@/components/ButtonToPage'
+import ButtonToPage from '@/components/ButtonToPage/ButtonToPage'
+import Input from '@/components/Input/Input'
 import './page.css'
 
 
@@ -28,16 +29,9 @@ export default function Home() {
       </div>
       <div className='form'>
         <div>
-          <label>Nome: </label>
-        <input name="name" />
+          <Input labelName="Nome" labelEmail="Email">
+          </Input>
         </div>
-
-        <div>
-          <label>E-mail: </label>
-          <input name="name" />
-        </div>
-      
-      <Button/>
       </div>
     </main>
   );

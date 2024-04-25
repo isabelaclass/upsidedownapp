@@ -2,6 +2,7 @@
 import React from "react";
 import { useGameState } from "../../../gameSate";
 import "./page.css";
+import ButtonToHome from '@/components/ButtonToHome/ButtonToHome'
 
 export default function Home() {
   const { turn, winner, tie, marks, score, play, reset, resetScore } =
@@ -53,6 +54,7 @@ export default function Home() {
           </div>
         ))}
       </div>
+      <ButtonToHome/> 
     </div>
   );
 }
