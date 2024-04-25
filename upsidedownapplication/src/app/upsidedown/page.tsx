@@ -1,24 +1,28 @@
 "use client";
 import React from "react";
-import { useGameState } from "../../../gameSate";
-import "./page.css";
+import { useGameState } from "../../../gameSate"; // Importa o useGameState do arquivo de estado do jogo
+import "./page.css"; // Importa o estilo CSS para esta página
 import ButtonToHome from '@/components/ButtonToHome/ButtonToHome'
 
 export default function Home() {
+  // Extrai as variáveis do estado do jogo usando o useGameState
   const { turn, winner, tie, marks, score, play, reset, resetScore } =
     useGameState();
-    
+  
+  // Verifica se o jogo acabou
   const gameOver = !!winner || !!tie;
 
   const getSquares = () => {
     return new Array(9).fill(true);
   };
 
+  // Função para obter o marcador de uma célula com base no índice
   const getCellPlayer = (index: number) => {
     if (!marks[index]) {
       return;
     }
 
+    // Renderização do componente
     return marks[index];
   };
 
