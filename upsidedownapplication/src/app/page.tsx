@@ -3,6 +3,7 @@ import Simples from "@/components/Simples";
 import SimpleWithChildren from '@/components/SimpleWithChildren';
 import SimpleWithParam from '@/components/SimpleWithParam';
 import Button from '@/components/Button'
+import ButtonToPage from '@/components/ButtonToPage'
 import './page.css'
 
 
@@ -16,6 +17,7 @@ export default function Home() {
         alt="Upside down title" className="logo_principal"
         />
         <Simples/>
+        <ButtonToPage/>
         <SimpleWithChildren>
         <h1 className="title">O CLUBE DUNGEONS & DRAGONS</h1>
       </SimpleWithChildren>
