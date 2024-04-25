@@ -3,6 +3,7 @@ import Simples from "@/components/Simples";
 import SimpleWithChildren from '@/components/SimpleWithChildren';
 import SimpleWithParam from '@/components/SimpleWithParam';
 import Button from '@/components/Button'
+import './page.css'
 
 
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
       </div>
       <div className='form'>
         <div>
-          <label >Nome: </label>
+          <label>Nome: </label>
         <input name="name" />
         </div>
 

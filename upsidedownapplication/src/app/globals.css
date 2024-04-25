@@ -21,7 +21,8 @@ main {
 }
 
 .title {
-  color: red; 
+  color: red;
+  text-align: center; 
 }
 
 .card-container {
@@ -29,6 +30,8 @@ main {
   flex-direction: column;
   justify-content: space-around;
   margin-bottom: 30px;
+  row-gap: 8px;
+  align-items: center;
 }
 
 @media (min-width: 1024px) {

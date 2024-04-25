@@ -56,7 +56,12 @@ body, html {
 
 .container .invert-element {
     transform: rotateZ(180deg) scaleX(-1);
+    width: 80vw;
+    @media (min-width:768px) {
+        width: 50vw;
+    }
 }
+
 
 
 .board {
