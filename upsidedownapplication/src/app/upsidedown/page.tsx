@@ -12,6 +12,7 @@ export default function Home() {
   // Verifica se o jogo acabou
   const gameOver = !!winner || !!tie;
 
+  // Retorna as 9 células
   const getSquares = () => {
     return new Array(9).fill(true);
   };
@@ -41,6 +42,7 @@ export default function Home() {
       {winner && <h1>{winner} ganhou</h1>}
       {tie && <h1>EMPATE</h1>}
       {gameOver && (
+        // Aparece a partir do game over
         <button className="buttonOver" onClick={reset}>
           Jogar novamente
         </button>
@@ -49,7 +51,9 @@ export default function Home() {
 
       <div className={`board ${gameOver ? "gameOver" : null}`}>
         {getSquares().map((_, i) => (
+          // Iteração sobre cada elemento
           <div
+            // Chama quem está na célula
             className={`cell ${getCellPlayer(i)}`}
             key={i}
             onClick={() => play(i)}
