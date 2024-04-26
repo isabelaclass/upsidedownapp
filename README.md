@@ -24,7 +24,7 @@
 ## :dart: Sobre ##
 
 ```sh
-• Site para intusiastas da série "Stranger Thingers" que querem receber novidades da série em primeira mão. 
+• Site para intusiastas da série "Stranger Things" que querem receber novidades da série em primeira mão. 
 ```
 
 ## :sparkles: Funcionalidades ##
@@ -50,7 +50,7 @@ As seguintes ferramentas 🛠 foram utilizadas na construção do projeto:
       <td>Next.Js</td>
     </tr>
     <tr>
-      <td>TypesCript</td>
+      <td>TypeScript</td>
     </tr> 
     <tr>
       <td>Html</td>
