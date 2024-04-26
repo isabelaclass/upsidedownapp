@@ -36,7 +36,7 @@ const Input: React.FC<Props> = ({ labelName, labelEmail }) => {
       
        {showSuccess && (
           <p style={{ color: 'green' }}>
-            Parabéns, agora você faz parte do clube!
+          Bem-vindo ao clube!
           </p>
         )}
 
