@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">UpsideDownApp</h1>
 
-## Getting Started
 
-First, run the development server:
+<div align="center" id="top">
+  <img alt="cadastro e login" title="cadastro e login" src="./cadastro_and_login.gif"/>
+</h1>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+  &#xa0;
+ 
+
+ </div>
+ 
+
+<p align="center">
+  <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0; 
+  <a href="#sparkles-funcionalidades">Funcionalidades</a> &#xa0; | &#xa0; 
+  <a href="#rocket-tecnologias">Tecnologias</a> &#xa0; | &#xa0; 
+  <a href="#white_check_mark-pré-requisitos">Pré-requisitos</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-começando">Começando</a> &#xa0; 
+<!--  <a href="#autor">Autor</a> -->
+</p>
+
+
+<br>
+				
+	
+## :dart: Sobre ##
+
+```sh
+• Site para intusiastas da série "Stranger Thingers" que querem receber novidades da série em primeira mão. 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## :sparkles: Funcionalidades ##
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+:heavy_check_mark: Inscrever-se para receber novidades da série;\
+:heavy_check_mark: Jogo da velha interativo ao inverter mundo;\
+:heavy_check_mark: placar, botão de resetar jogo e voltar a tela inicial do clube.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## :rocket: Tecnologias ##
+ 
+ 
+As seguintes ferramentas 🛠 foram utilizadas na construção do projeto:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<table>
+  <thead>
+    <th>Front-end</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Next.Js</td>
+    </tr>
+    <tr>
+      <td>TypesCript</td>
+    </tr> 
+    <tr>
+      <td>Html</td>
+    </tr>
+    <tr>
+      <td>Css</td>
+    </tr>  
+	  
+  </tbody>
 
-## Deploy on Vercel
+</table>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## :white_check_mark: Pré-requisitos ##
+
+
+Antes de começar 🏁, você vai precisar ter instalado em sua máquina as sequintes ferramentas:
+[Git](https://git-scm.com/downloads), [Node.Js](https://nodejs.org/en/download). Além disto é bom ter um editor para trabalhar com o código, tal como: [VS Code](https://code.visualstudio.com/download)
+
+
+## :checkered_flag: Começando ##
+
+
+```bash
+# Clone este repositorio
+ -> git bash here
+  $ https://github.com/isabelaclass/upsidedownapp.git
+
+# Acesse a pasta do projeto que aparecerá em sua área de trabalho
+ -> mouse esquerdo -> Abrir com Code
+
+# Colocar os seguintes comandos no terminal para rodar o projeto
+ 1º  ->  npm install -g next
+ 2º  ->  npm install  
+ 3º  ->  npm run dev 
+```
+
+
+---
+
+
+<br>
+
+<a href="#top">Voltar para o topo</a>
+
+
+  </tbody>
+
+</table>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
