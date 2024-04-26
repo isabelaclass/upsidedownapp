@@ -40,13 +40,15 @@ const Input: React.FC<Props> = ({ labelName, labelEmail }) => {
           </p>
         )}
 
-      {showWarning && (
+      {showWarning == true? 
         <p style={{ color: 'red' }}>
-          Por favor, preencha todos os campos.
+          preencha todos os campos.
         </p>
-      )}
+      :<p style={{ color: 'transparent' }}>
+      preencha todos os campos.
+      </p>}
 
-      <button onClick={handleClick}>Me inscrever</button>
+      <button onClick={handleClick}>inscrever-se</button>
     </div>
   )
 }

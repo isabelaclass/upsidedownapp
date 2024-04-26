@@ -1,6 +1,5 @@
 //Realiza todos os imports necessários para o código
 import Image from "next/image";
-import Texto from "@/components/Texto";
 import SimpleWithParam from '@/components/SimpleWithParam';
 import ButtonToPage from '@/components/ButtonToPage/ButtonToPage'
 import Input from '@/components/Input/Input'
@@ -18,7 +17,7 @@ export default function Home() {
         alt="Upside down title" className="logo_principal"
         />
         {/* Renderiza o componente "Texto" que contém o texto de abertura da página*/}
-        <Texto/>
+        <p style={{textAlign: 'center'}}>Faça parte do nosso clube de D&D inspirado em Stranger Things! Inscreva-se abaixo para receber novidades, conteúdos exclusivos e quem sabe até participar de eventos especiais com outros fãs da série. Junte-se a nós e embarque em aventuras incríveis</p>
         {/* Renderiza o componente "ButtonToPage" que leva ao UpsideDown*/}
         <ButtonToPage/>
         {/* Título do clube*/}

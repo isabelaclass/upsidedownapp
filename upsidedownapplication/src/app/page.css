@@ -9,6 +9,10 @@ body, html {
     row-gap: 12px;
 }
 
+.form p{
+  margin: 0;
+}
+
 .form div {
     display: flex;
     flex-direction: column;
