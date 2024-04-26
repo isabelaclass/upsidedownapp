@@ -1,7 +1,7 @@
 <h1 align="center">UpsideDownApp</h1>
 
 <div align="center" id="top">
-  <img alt="cadastro e login" title="cadastro e login" src="./cadastro_and_login.gif"/>
+  <img alt="cadastro e login" title="cadastro e login" src="./animacao.gif"/>
 </h1>
 
   &#xa0;
