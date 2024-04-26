@@ -1,16 +1,12 @@
 <h1 align="center">UpsideDownApp</h1>
 
-
 <div align="center" id="top">
   <img alt="cadastro e login" title="cadastro e login" src="./cadastro_and_login.gif"/>
 </h1>
 
-
   &#xa0;
- 
 
  </div>
- 
 
 <p align="center">
   <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0; 
