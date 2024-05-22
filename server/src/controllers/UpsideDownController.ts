@@ -5,24 +5,23 @@ import { JsonObject } from "swagger-ui-express";
 //a controller faz a verificação do dado, se é válido ou não
 
 interface UpsideDown {
-  id: number;
   name: string;
   email: string;
+  personagem: string;
+  idade: string;
+  experiencia: string;
 }
 
 @Route("api/upsideDown")
 export default class UpsideDownController {
   list : UpsideDown[] = [
     {
-      id: 0,
-      name: "Ana",
-      email: "ana@gmail.com"
-    },
-    {
-      id: 1,
       name: "joao",
-      email: "joao@gmail.com"
-    },
+      email: "joao@gmail.com",
+      personagem: "eleven",
+      idade: "21",
+      experiencia: "low"
+    }
   ];
 
   @Get("/getAll")
@@ -40,26 +39,35 @@ export default class UpsideDownController {
 
 
   @Post("/create")
-  public async create(@Body() body: {name: string, email: string}): Promise<String> {
+  public async create(@Body() body: {name: string, email: string, personagem: string, idade: string, experiencia: string}): Promise<String> {
     const data = new UpsideDownModel({
       name: body.name,
-      email: body.email
+      email: body.email,
+      personagem: body.personagem,
+      idade: body.idade,
+      experiencia: body.experiencia
     })
 
     try {
       await data.save()
-      return "oks"
+      return "Ok"
     } catch (error) {
       return JSON.stringify(error)
     }
   }
 
   @Patch("/update/:id")
-  public async update(@Body() body: { name: string, email:string }): Promise<JsonObject> {
+  public async update(id: string, @Body() body: { name: string, email:string, personagem: string, idade: string, experiencia: string }): Promise<JsonObject> {
     try {
-      const result = await UpsideDownModel.findByIdAndUpdate(
-        { name: body.name, email: body.email }
-      )
+      const result = await UpsideDownModel.findByIdAndUpdate( 
+       id, { 
+        name: body.name, 
+        email: body.email, 
+        personagem: body.personagem,
+        idade: body.idade,
+        experiencia: body.experiencia 
+      }
+      );
 
       return { result: result };
     } catch (error: any) {
@@ -72,7 +80,7 @@ export default class UpsideDownController {
   @Delete("/delete/:id")
   public async delete(id: string): Promise<JsonObject> {
     try {
-      const data = await UpsideDownModel.findByIdAndDelete(id)
+      const data = await UpsideDownModel.findByIdAndDelete(id);
       return { data: data };
     } catch (error: any) {
       return {

@@ -9,6 +9,18 @@ const upsideDownSchema = new mongoose.Schema({
     required: true,
     type: String,
   },
+  personagem: {
+    required: true,
+    type: String,
+  },
+  idade: {
+    required: true,
+    type: String,
+  },
+  experiencia: {
+    required: true,
+    type: String,
+  },
 })
 
 export const UpsideDownModel = mongoose.model("UpsideDown", upsideDownSchema)

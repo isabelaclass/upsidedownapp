@@ -67,6 +67,15 @@
 						"application/json": {
 							"schema": {
 								"properties": {
+									"experiencia": {
+										"type": "string"
+									},
+									"idade": {
+										"type": "string"
+									},
+									"personagem": {
+										"type": "string"
+									},
 									"email": {
 										"type": "string"
 									},
@@ -75,6 +84,9 @@
 									}
 								},
 								"required": [
+									"experiencia",
+									"idade",
+									"personagem",
 									"email",
 									"name"
 								],
@@ -101,13 +113,31 @@
 					}
 				},
 				"security": [],
-				"parameters": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
 				"requestBody": {
 					"required": true,
 					"content": {
 						"application/json": {
 							"schema": {
 								"properties": {
+									"experiencia": {
+										"type": "string"
+									},
+									"idade": {
+										"type": "string"
+									},
+									"personagem": {
+										"type": "string"
+									},
 									"email": {
 										"type": "string"
 									},
@@ -116,6 +146,9 @@
 									}
 								},
 								"required": [
+									"experiencia",
+									"idade",
+									"personagem",
 									"email",
 									"name"
 								],
