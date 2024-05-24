@@ -30,4 +30,10 @@ router.delete("/delete/:id", async (req: Request, res: Response) => {
   return res.status(response.error ? 400 : 200).send(response)
 })
 
+router.get("/queryPersonagem/:name", async (req: Request, res: Response) => {
+  const response = await controller.query(req.params.name, req.body)
+
+  return res.status(response.error ? 400 : 200).send(response)
+})
+
 export default router;

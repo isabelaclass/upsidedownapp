@@ -89,4 +89,17 @@ export default class UpsideDownController {
     }
   }
 
+  @Get("/queryPersonagem/:name")
+  public async query(name:string, @Body() body: {personagem: string}): Promise<JsonObject> {
+  try{
+    const data = await UpsideDownModel.find({name}).select("personagem -_id");
+    return data;
+  }
+  catch (error: any)
+  {
+    return {
+      error: error.mesage
+    };
+  }
+  }
 }
