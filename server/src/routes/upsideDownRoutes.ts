@@ -36,4 +36,11 @@ router.get("/queryPersonagem/:name", async (req: Request, res: Response) => {
   return res.status(response.error ? 400 : 200).send(response)
 })
 
+router.get("/getExperience/:id/:name", async (req: Request, res: Response) => {
+  const { id, name } = req.params;
+  const response = await controller.getExperience(id, name);
+
+  return res.status(response.error ? 400 : 200).send(response);
+});
+
 export default router;

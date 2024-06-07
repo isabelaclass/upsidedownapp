@@ -102,4 +102,19 @@ export default class UpsideDownController {
     };
   }
   }
+
+  @Get("/getExperience/:id/:name")
+public async getExperience(id: string, name: string): Promise<JsonObject> {
+  try {
+    const user = await UpsideDownModel.findOne({ _id: id, name: name });
+    
+    if (!user) {
+      return { error: "Usuário não encontrado." };
+    }
+
+    return { experience: user.experiencia };
+  } catch (error: any) {
+    return { error: error.message };
+  }
+}
 }
