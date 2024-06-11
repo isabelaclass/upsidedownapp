@@ -37,6 +37,23 @@ export default class UpsideDownController {
     }
   }
 
+  @Get("/getUser")
+  public async getUser(email: string): Promise<JsonObject> {
+    try {
+      const data = await UpsideDownModel.findOne({ email });
+      if (!data) {
+        throw null;
+      }
+      return data;
+    }
+    catch (error: any) {
+      return {
+        error: error.message
+      };
+    }
+  }
+
+
 
   @Post("/create")
   public async create(@Body() body: {name: string, email: string, personagem: string, idade: string, experiencia: string}): Promise<String> {
@@ -47,6 +64,8 @@ export default class UpsideDownController {
       idade: body.idade,
       experiencia: body.experiencia
     })
+
+
 
     try {
       await data.save()
