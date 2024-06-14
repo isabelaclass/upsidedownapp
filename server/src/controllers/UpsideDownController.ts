@@ -151,6 +151,7 @@ export default class UpsideDownController {
     }
   }
 
+  // implementar com 'where' (ex: idade entre x e y)
   @Get("/getIdade/:id/:idade")
   public async getIdade(id: string, idade: string): Promise<JsonObject> {
     try {

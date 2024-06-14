@@ -43,4 +43,11 @@ router.get("/getExperience/:id/:name", async (req: Request, res: Response) => {
   return res.status(response.error ? 400 : 200).send(response);
 });
 
+router.get("/getIdade/:id/:idade", async (req: Request, res: Response) => {
+  const { id, idade } = req.params;
+  const response = await controller.getExperience(id, idade);
+
+  return res.status(response.error ? 400 : 200).send(response);
+});
+
 export default router;
