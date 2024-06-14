@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useGameState } from "../../../gameSate"; // Importa o useGameState do arquivo de estado do jogo
+import { useGameState } from "../../../gameState"; // Importa o useGameState do arquivo de estado do jogo
 import "./page.css"; // Importa o estilo CSS para esta página
 import ButtonToHome from '@/components/ButtonToHome/ButtonToHome'
 
