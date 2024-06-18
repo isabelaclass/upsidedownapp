@@ -31,7 +31,7 @@ export default function Home() {
       <div className='form'>
         <div>
           {/* Renderiza o componente que recebe os nomes das lebsn como parâmetro e mostra no formulário*/}
-          <Input labelName="Nome" labelEmail="Email">
+          <Input labelName="Nome" labelEmail="Email" labelAge="Idade" labelCharacter="Personagem Favorito" labelExperience="Nível de Jogo">
           </Input>
         </div>
       </div>
