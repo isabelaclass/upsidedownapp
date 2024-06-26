@@ -7,9 +7,9 @@ import { JsonObject } from "swagger-ui-express";
 interface UpsideDown {
   name: string;
   email: string;
-  personagem: string;
-  idade: string;
-  experiencia: string;
+  character: string;
+  age: string;
+  experience: string;
 }
 
 @Route("api/upsideDown")
@@ -18,9 +18,9 @@ export default class UpsideDownController {
     {
       name: "joao",
       email: "joao@gmail.com",
-      personagem: "eleven",
-      idade: "21",
-      experiencia: "low",
+      character: "eleven",
+      age: "21",
+      experience: "baixo",
     },
   ];
 
@@ -42,17 +42,17 @@ export default class UpsideDownController {
     body: {
       name: string;
       email: string;
-      personagem: string;
-      idade: string;
-      experiencia: string;
+      character: string;
+      age: string;
+      experience: string;
     }
   ): Promise<String> {
     const data = new UpsideDownModel({
       name: body.name,
       email: body.email,
-      personagem: body.personagem,
-      idade: body.idade,
-      experiencia: body.experiencia,
+      character: body.character,
+      age: body.age,
+      experience: body.experience,
     });
 
     try {
@@ -70,18 +70,18 @@ export default class UpsideDownController {
     body: {
       name: string;
       email: string;
-      personagem: string;
-      idade: string;
-      experiencia: string;
+      character: string;
+      age: string;
+      experience: string;
     }
   ): Promise<JsonObject> {
     try {
       const result = await UpsideDownModel.findByIdAndUpdate(id, {
         name: body.name,
         email: body.email,
-        personagem: body.personagem,
-        idade: body.idade,
-        experiencia: body.experiencia,
+        character: body.character,
+        age: body.age,
+        experience: body.experience,
       });
 
       return { result: result };
@@ -104,14 +104,13 @@ export default class UpsideDownController {
     }
   }
 
-  @Get("/queryPersonagem/:name")
+  @Get("/queryCharacter/:character")
   public async query(
-    name: string,
-    @Body() body: { personagem: string }
+    character: string,
   ): Promise<JsonObject> {
     try {
-      const data = await UpsideDownModel.find({ name }).select(
-        "personagem -_id"
+      const data = await UpsideDownModel.find({ character }).select(
+        "character -_id"
       );
       return data;
     } catch (error: any) {
@@ -121,13 +120,14 @@ export default class UpsideDownController {
     }
   }
 
-  @Get("/getUser")
-  public async getUser(email: string): Promise<JsonObject> {
+  @Get("/getName/:name")
+  public async queryName(
+    name: string,
+  ): Promise<JsonObject> {
     try {
-      const data = await UpsideDownModel.findOne({ email });
-      if (!data) {
-        throw null;
-      }
+      const data = await UpsideDownModel.find({ name }).select(
+        "name -_id"
+      );
       return data;
     } catch (error: any) {
       return {
@@ -136,34 +136,35 @@ export default class UpsideDownController {
     }
   }
 
-  @Get("/getExperience/:id/:name")
-  public async getExperience(id: string, name: string): Promise<JsonObject> {
+  @Get("/getExperience/:experience")
+  public async queryExperience(
+    experience: string,
+  ): Promise<JsonObject> {
     try {
-      const user = await UpsideDownModel.findOne({ _id: id, name: name });
-
-      if (!user) {
-        return { error: "Usuário não encontrado." };
-      }
-
-      return { experience: user.experiencia };
+      const data = await UpsideDownModel.find({ experience }).select(
+        "experience -_id"
+      );
+      return data;
     } catch (error: any) {
-      return { error: error.message };
+      return {
+        error: error.mesage,
+      };
     }
   }
 
-  // implementar com 'where' (ex: idade entre x e y)
-  @Get("/getIdade/:id/:idade")
-  public async getIdade(id: string, idade: string): Promise<JsonObject> {
+  @Get("/getAge/:age")
+  public async queryAge(
+    age: string,
+  ): Promise<JsonObject> {
     try {
-      const user = await UpsideDownModel.findOne({ _id: id, idade: idade });
-
-      if (!user) {
-        return { error: "Idade não encontrada." };
-      }
-
-      return { idade: user.idade };
+      const data = await UpsideDownModel.find({ age }).select(
+        "age -_id"
+      );
+      return data;
     } catch (error: any) {
-      return { error: error.message };
+      return {
+        error: error.mesage,
+      };
     }
   }
 }

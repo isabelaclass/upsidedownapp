@@ -30,6 +30,7 @@ const Input: React.FC<Props> = ({
   const handleClick = () => {
     setShowWarning(false);
     setShowSuccess(false);
+
     const inputName = document.querySelector(
       `input[name="${labelName}"]`
     ) as HTMLInputElement;
@@ -43,8 +44,8 @@ const Input: React.FC<Props> = ({
       `input[name="${labelCharacter}"]`
     ) as HTMLInputElement;
     const inputExperience = document.querySelector(
-      `input[name="${labelExperience}"]`
-    ) as HTMLInputElement;
+      `select[name="${labelExperience}"]`
+    ) as HTMLSelectElement;
 
     if (
       !inputName.value ||
@@ -56,12 +57,12 @@ const Input: React.FC<Props> = ({
       setShowWarning(true);
       setShowSuccess(false);
     } else {
-      const body = { 
+      const body = {
         name: inputName.value,
         email: inputEmail.value,
-        idade: inputAge.value,
-        personagem: inputCharacter.value,
-        experiencia: inputExperience.value
+        age: inputAge.value,
+        character: inputCharacter.value,
+        experience: inputExperience.value
       }
       instance
         .post("/create", body)
@@ -93,7 +94,12 @@ const Input: React.FC<Props> = ({
       <input type="text" id={labelCharacter} name={labelCharacter} />
 
       <label htmlFor={labelExperience}>{labelExperience}</label>
-      <input type="text" id={labelExperience} name={labelExperience} />
+      {/* <input type="text" id={labelExperience} name={labelExperience} /> */}
+      <select id={labelExperience} name={labelExperience}>
+        <option value="Baixo">Baixo</option>
+        <option value="Médio">Médio</option>
+        <option value="Alto">Alto</option>
+      </select>
 
       {showSuccess && <p style={{ color: "green" }}>Bem-vindo ao clube!</p>}
 

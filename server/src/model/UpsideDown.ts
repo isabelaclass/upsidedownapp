@@ -9,15 +9,15 @@ const upsideDownSchema = new mongoose.Schema({
     required: true,
     type: String,
   },
-  personagem: {
+  character: {
     required: true,
     type: String,
   },
-  idade: {
+  age: {
     required: true,
     type: String,
   },
-  experiencia: {
+  experience: {
     required: true,
     type: String,
   },

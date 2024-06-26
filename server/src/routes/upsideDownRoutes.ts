@@ -30,24 +30,28 @@ router.delete("/delete/:id", async (req: Request, res: Response) => {
   return res.status(response.error ? 400 : 200).send(response)
 })
 
-router.get("/queryPersonagem/:name", async (req: Request, res: Response) => {
-  const response = await controller.query(req.params.name, req.body)
+router.get("/queryCharacter/:character", async (req: Request, res: Response) => {
+  const response = await controller.query(req.params.character)
 
   return res.status(response.error ? 400 : 200).send(response)
 })
 
-router.get("/getExperience/:id/:name", async (req: Request, res: Response) => {
-  const { id, name } = req.params;
-  const response = await controller.getExperience(id, name);
+router.get("/getName/:name", async (req: Request, res: Response) => {
+  const response = await controller.queryName(req.params.name)
 
-  return res.status(response.error ? 400 : 200).send(response);
+  return res.status(response.error ? 400 : 200).send(response)
+})
+
+router.get("/getExperience/:experience", async (req: Request, res: Response) => {
+  const response = await controller.queryExperience(req.params.experience)
+
+  return res.status(response.error ? 400 : 200).send(response)
 });
 
-router.get("/getIdade/:id/:idade", async (req: Request, res: Response) => {
-  const { id, idade } = req.params;
-  const response = await controller.getExperience(id, idade);
+router.get("/getAge/:age", async (req: Request, res: Response) => {
+  const response = await controller.queryAge(req.params.age)
 
-  return res.status(response.error ? 400 : 200).send(response);
+  return res.status(response.error ? 400 : 200).send(response)
 });
 
 export default router;

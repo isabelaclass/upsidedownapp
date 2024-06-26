@@ -67,13 +67,13 @@
 						"application/json": {
 							"schema": {
 								"properties": {
-									"experiencia": {
+									"experience": {
 										"type": "string"
 									},
-									"idade": {
+									"age": {
 										"type": "string"
 									},
-									"personagem": {
+									"character": {
 										"type": "string"
 									},
 									"email": {
@@ -84,9 +84,9 @@
 									}
 								},
 								"required": [
-									"experiencia",
-									"idade",
-									"personagem",
+									"experience",
+									"age",
+									"character",
 									"email",
 									"name"
 								],
@@ -129,13 +129,13 @@
 						"application/json": {
 							"schema": {
 								"properties": {
-									"experiencia": {
+									"experience": {
 										"type": "string"
 									},
-									"idade": {
+									"age": {
 										"type": "string"
 									},
-									"personagem": {
+									"character": {
 										"type": "string"
 									},
 									"email": {
@@ -146,9 +146,9 @@
 									}
 								},
 								"required": [
-									"experiencia",
-									"idade",
-									"personagem",
+									"experience",
+									"age",
+									"character",
 									"email",
 									"name"
 								],
@@ -187,7 +187,7 @@
 				]
 			}
 		},
-		"/api/upsideDown/queryPersonagem/{name}": {
+		"/api/upsideDown/queryCharacter/{character}": {
 			"get": {
 				"operationId": "Query",
 				"responses": {
@@ -206,7 +206,91 @@
 				"parameters": [
 					{
 						"in": "path",
+						"name": "character",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/upsideDown/getName/{name}": {
+			"get": {
+				"operationId": "QueryName",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/JsonObject"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
 						"name": "name",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/upsideDown/getExperience/{experience}": {
+			"get": {
+				"operationId": "QueryExperience",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/JsonObject"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "experience",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/api/upsideDown/getAge/{age}": {
+			"get": {
+				"operationId": "QueryAge",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/JsonObject"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "age",
 						"required": true,
 						"schema": {
 							"type": "string"

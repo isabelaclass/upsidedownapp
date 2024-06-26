@@ -3,8 +3,8 @@ import Image from "next/image";
 import SimpleWithParam from '@/components/SimpleWithParam';
 import ButtonToPage from '@/components/ButtonToPage/ButtonToPage'
 import Input from '@/components/Input/Input'
+import Table from '@/components/Table/Table'
 import './page.css'
-
 
 export default function Home() {
   return (
@@ -28,13 +28,16 @@ export default function Home() {
         <SimpleWithParam src="/serie-image-02.png"/>
         <SimpleWithParam src="/serie-image-03.png"/>
       </div>
+
+      <Table/>
       <div className='form'>
         <div>
           {/* Renderiza o componente que recebe os nomes das lebsn como parâmetro e mostra no formulário*/}
-          <Input labelName="Nome" labelEmail="Email" labelAge="Idade" labelCharacter="Personagem Favorito" labelExperience="Nível de Jogo">
+          <Input labelName="Nome" labelEmail="Email" labelAge="Idade" labelCharacter="Personagem Favorito" labelExperience="Nível de Conhecimento">
           </Input>
         </div>
       </div>
+      
     </main>
   );
 }
