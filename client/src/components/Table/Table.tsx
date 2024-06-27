@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import axios from "axios";
+import { useUserState } from "../../../userState";
 
 const instance = axios.create({
   baseURL: "http://127.0.0.1:4000/api/upsideDown",
@@ -9,14 +10,15 @@ const instance = axios.create({
 });
 
 const Table: React.FC = () => {
-  const [data, setData] = useState<any[]>([]);
+  const data = useUserState((state) => state.data)
+  const setData = useUserState((state) => state.setData)
+  const reset = useUserState((state) => state.reset)
 
   const getAll = () => {
     instance
       .get("/getAll")
       .then(function (response) {
         if (response.status === 200) {
-          console.log("all", response.data)
           setData(response.data);
         }
       })
@@ -32,7 +34,6 @@ const Table: React.FC = () => {
         if (response.status === 200) {
           setData(response.data);
         }
-        console.log("getCharacters function: ", response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -46,7 +47,6 @@ const Table: React.FC = () => {
         if (response.status === 200) {
           setData(response.data);
         }
-        console.log("getAges function: ", response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -60,7 +60,6 @@ const Table: React.FC = () => {
         if (response.status === 200) {
           setData(response.data);
         }
-        console.log("getExperiences function: ", response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -73,54 +72,11 @@ const Table: React.FC = () => {
       .then(function (response) {
         if (response.status === 200) {
           setData(response.data);
-          console.log(data)
         }
-        console.log("getNames function: ", response.data);
       })
       .catch(function (error) {
         console.log(error);
       });
-  };
-
-  // Filter elements based on selection
-  const filterSelection = (c: string) => {
-    let x: HTMLCollectionOf<Element> =
-      document.getElementsByClassName("filterDiv");
-    if (c === "all") c = "";
-
-    // Add the "show" class (display:block) to the filtered elements,
-    // and remove the "show" class from the elements that are not selected
-    for (let i = 0; i < x.length; i++) {
-      RemoveClass(x[i], "show");
-      if (x[i].className.indexOf(c) > -1) {
-        AddClass(x[i], "show");
-      }
-    }
-  };
-
-  // Show filtered elements
-  const AddClass = (element: Element, name: string) => {
-    let arr1: string[] = element.className.split(" ");
-    let arr2: string[] = name.split(" ");
-
-    for (let i = 0; i < arr2.length; i++) {
-      if (arr1.indexOf(arr2[i]) === -1) {
-        element.className += " " + arr2[i];
-      }
-    }
-  };
-
-  // Hide elements that are not selected
-  const RemoveClass = (element: Element, name: string) => {
-    let arr1: string[] = element.className.split(" ");
-    let arr2: string[] = name.split(" ");
-
-    for (let i = 0; i < arr2.length; i++) {
-      while (arr1.indexOf(arr2[i]) > -1) {
-        arr1.splice(arr1.indexOf(arr2[i]), 1);
-      }
-    }
-    element.className = arr1.join(" ");
   };
 
   const SetActiveButton = (event: { currentTarget: HTMLElement; }) => {
@@ -133,23 +89,18 @@ const Table: React.FC = () => {
     const category = (event.currentTarget as HTMLElement).getAttribute(
       "data-category"
     );
-    if (category) {
-      filterSelection(category);
-    }
+
     if (category != "all") {
+      reset();
       document.getElementById("search").style.display = "block"
     } else {
       document.getElementById("search").style.display = "none"
     }
+
+    if (category == "all") {
+      getAll();
+    }
   }
-
-  // Initially call the filter function to show all items
-
-  // useEffect vai permitir com que esas função rode apenas após o carregamento
-  // da página, fazendo com que o `document` exista nesse momento.
-  useEffect(() => {
-    getAll();
-  }, []);
 
   const search = () => {
     const activeCategory = document.getElementsByClassName("active")[0].attributes[1].value
@@ -158,19 +109,20 @@ const Table: React.FC = () => {
     if (activeCategory == "name") {
       getName(inputData)
     }
-    if (activeCategory == "character") {
+    else if (activeCategory == "character") {
       getCharacters(inputData)
     }
-    if (activeCategory == "age") {
+    else if (activeCategory == "age") {
       getAge(inputData)
     }
-    if (activeCategory == "experience") {
+    else if (activeCategory == "experience") {
       getExperience(inputData)
     }
-    // else {
-    //   getAll()
-    // }
   }
+
+  // useEffect vai permitir com que esas função rode apenas após o carregamento
+  // da página, fazendo com que o `document` exista nesse momento.
+  useEffect(() => { getAll() }, []);
 
   return (
     <div>
@@ -199,7 +151,7 @@ const Table: React.FC = () => {
 
       <div className="selection-container">
         {data.map((item, index) => (
-          <div key={index} className={`filterDiv ${item.category}`}>
+          <div key={index} className={`filterDiv ${item.category} show`}>
             {item.name}, {item.character}, {item.age}, {item.experience}
           </div>
         ))}

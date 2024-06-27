@@ -109,9 +109,7 @@ export default class UpsideDownController {
     character: string,
   ): Promise<JsonObject> {
     try {
-      const data = await UpsideDownModel.find({ character }).select(
-        "character -_id"
-      );
+      const data = await UpsideDownModel.find({ character });
       return data;
     } catch (error: any) {
       return {
@@ -125,9 +123,7 @@ export default class UpsideDownController {
     name: string,
   ): Promise<JsonObject> {
     try {
-      const data = await UpsideDownModel.find({ name }).select(
-        "name -_id"
-      );
+      const data = await UpsideDownModel.find({ name });
       return data;
     } catch (error: any) {
       return {
@@ -141,9 +137,7 @@ export default class UpsideDownController {
     experience: string,
   ): Promise<JsonObject> {
     try {
-      const data = await UpsideDownModel.find({ experience }).select(
-        "experience -_id"
-      );
+      const data = await UpsideDownModel.find({ experience });
       return data;
     } catch (error: any) {
       return {
@@ -157,9 +151,7 @@ export default class UpsideDownController {
     age: string,
   ): Promise<JsonObject> {
     try {
-      const data = await UpsideDownModel.find({ age }).select(
-        "age -_id"
-      );
+      const data = await UpsideDownModel.find({ age });
       return data;
     } catch (error: any) {
       return {
