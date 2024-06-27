@@ -5,6 +5,8 @@ import ButtonToPage from '@/components/ButtonToPage/ButtonToPage'
 import Input from '@/components/Input/Input'
 import Table from '@/components/Table/Table'
 import './page.css'
+import UpdateInput from "@/components/UpadteInfo/Update";
+import DeleteInput from "@/components/DeleteInfo/Delete";
 
 export default function Home() {
   return (
@@ -36,6 +38,18 @@ export default function Home() {
           <Input labelName="Nome" labelEmail="Email" labelAge="Idade" labelCharacter="Personagem Favorito" labelExperience="Nível de Conhecimento">
           </Input>
         </div>
+      </div>
+      <div className='update-form'>
+        <div>
+          <UpdateInput labelId="Atualizar informações" labelName="Nome" labelEmail="Email" labelAge="Idade" labelCharacter="Personagem Favorito" labelExperience="Nível de Conhecimento">
+          </UpdateInput>
+        </div>  
+      </div>
+      <div className='delete-form'>
+        <div>
+          <DeleteInput labelId="Deletar dados">
+          </DeleteInput>
+        </div>  
       </div>
       
     </main>

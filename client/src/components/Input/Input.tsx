@@ -93,13 +93,13 @@ const Input: React.FC<Props> = ({
       <label htmlFor={labelCharacter}>{labelCharacter}</label>
       <input type="text" id={labelCharacter} name={labelCharacter} />
 
-      <label htmlFor={labelExperience}>{labelExperience}</label>
+      {/* <label htmlFor={labelExperience}>{labelExperience}</label>
       {/* <input type="text" id={labelExperience} name={labelExperience} /> */}
       <select id={labelExperience} name={labelExperience}>
         <option value="Baixo">Baixo</option>
         <option value="Médio">Médio</option>
         <option value="Alto">Alto</option>
-      </select>
+      </select> 
 
       {showSuccess && <p style={{ color: "green" }}>Bem-vindo ao clube!</p>}
 
