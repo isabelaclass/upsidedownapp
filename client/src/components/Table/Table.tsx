@@ -122,7 +122,7 @@ const Table: React.FC = () => {
 
   // useEffect vai permitir com que esas função rode apenas após o carregamento
   // da página, fazendo com que o `document` exista nesse momento.
-  useEffect(() => { getAll() }, []);
+  // useEffect(() => { getAll() }, []);
 
   return (
     <div>
